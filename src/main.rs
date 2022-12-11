@@ -4,6 +4,11 @@ use web3::contract::{Contract, Options};
 #[tokio::main]
 async fn main() -> web3::contract::Result<()> {
     let _ = env_logger::try_init();
+    let _r = verify_on_optimism().await;
+    Ok(())
+}
+
+async fn verify_on_optimism() -> web3::contract::Result<()> {
     let http = web3::transports::Http::new("https://mainnet.optimism.io")?;
     //let eth = Eth::new(http);
     let web3 = web3::Web3::new(http);
@@ -30,6 +35,5 @@ async fn main() -> web3::contract::Result<()> {
     // errors about `Detokenize` missing for `()`.
     let is_registered: bool = result.await?;
     println!("Is registered? {}", is_registered);
-
     Ok(())
 }

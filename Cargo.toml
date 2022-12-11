@@ -1,0 +1,16 @@
+[package]
+name = "optimism-monitor"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+web3 = "0.18.0"
+tokio = "1.23.0"
+hex = "0.4"
+hex-literal = "0.3"
+env_logger = "0.10.0"
+
+[dev-dependencies]
+# For examples
